@@ -1,3 +1,6 @@
+##a) Acquisition of data.  
+#Web crawling the real time data by using Python 
+
 #Importing Libraries
 #Selenium (for accessing websites and automation testing)
 from selenium import webdriver
@@ -184,6 +187,9 @@ for i in range(8):
     file_name='flights' + time.strftime('%d-%b-%Y_%H-%M') + '.xlsx'
     df.to_excel(file_name)
 
+##b)  Management of data 
+# Store data into data lake (Microsoft Azure Data Lake)
+
     ## Use this only for Azure AD service-to-service authentication
     from azure.common.credentials import ServicePrincipalCredentials
 
@@ -208,6 +214,7 @@ for i in range(8):
     data_folder = Path("source_data/text_files/")
 
     file_to_open = data_folder / "raw_data.txt"
+    
     ## Use these as needed for your application
     import logging, getpass, pprint, uuid, time
 
