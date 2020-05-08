@@ -1,1 +1,43 @@
+#Import the required modules
+import pandas as pd
+import numpy as np
 
+#Create a dataframe from a CSV file containing details of books
+df = pd.read_csv('D:/UM/Data Mining/BL-Flickr-Images-Book.csv')
+df.head()
+
+#Dropping unwanted columns that do  not describe the book
+to_drop = ['Edition Statement',
+            'Corporate Author',
+            'Corporate Contributors',
+            'Former owner',
+            'Engraver',
+            'Contributors',
+            'Issuance type',
+            'Shelfmarks']
+
+df.drop(to_drop, inplace=True, axis=1)
+df.head()
+
+
+#Replacing the existing index with the Identifier column using set_index
+
+df['Identifier'].is_unique
+df.head()
+df.set_index('Identifier', inplace=True)
+
+#Tidying the date of publication column
+#Remove the extra dates in square brackets, wherever present: 1879 [1878]
+#Convert date ranges to their “start date”, wherever present: 1860-63; 1839, 38-54
+#Completely remove the dates we are not certain about and replace them with NumPy’s NaN: [1897?]
+#Convert the string nan to NumPy’s NaN value
+
+df.get_dtype_counts()
+df.loc[1905:, 'Date of Publication'].head(10)
+regex = r'^(\d{4})'
+extr = df['Date of Publication'].str.extract(r'^(\d{4})', expand=False)
+extr.head()
+df['Date of Publication'].isnull().sum() / len(df)
+df['Place of Publication'] = np.where(london, 'London',
+                                      np.where(oxford, 'Oxford',
+                                               pub.str.replace('-', ' ')))
