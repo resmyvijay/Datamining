@@ -1,0 +1,36 @@
+import pandas as pd
+df = pd.read_excel("D:/UM/Data Mining/find-cheapest-flights-master/find-cheapest-flights-master/flights28-May-2020_02-36.xlsx")
+print(df.head())
+for col in df.columns:
+    print(col)
+
+#Renaming column title
+
+df = df.rename(columns = {'price(2020-5-28---2:36)':'price'})
+print(df.head())
+
+#Converting prices data in the prices column to numerical valules by removing currency symbol and commas
+df['price'] = df['price'].str.replace(',','')
+df['price'] = df['price'].str.replace('RM','')
+df['price'] = df['price'].astype(int)
+print(df.head())
+
+#Finding minimum price from prices column
+min_price = df['price'].min()
+print(min_price)
+
+#Printing the row with the minimum price
+min_row = df.loc[df['price']==min_price]
+print(min_row)
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Plot showing the insight in duration vs price
+df.plot(kind='bar',x='duration',y='price')
+
+plt.show()
+#Plot showing the relationship between departure time and price
+df.sort_values(by=['departure_time'])
+df.plot(x='departure_time', y='price')
+plt.show()
