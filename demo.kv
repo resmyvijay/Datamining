@@ -1,0 +1,62 @@
+<CustButton@Button>:
+    font_size: 28
+
+<DemoGridLayout>:
+    id:test
+    display:source
+    rows:7
+    cols:1
+    padding:10
+    spacing:10
+    source: source
+    destination: destination
+    return_date: return_date
+    depart_date: depart_date
+
+    TextInput:
+        id: source
+        font_size:20
+        multiline:True
+        hint_text: "Enter Source location"
+        size: (150, 44)
+
+    TextInput:
+        id: destination
+        font_size:20
+        multiline:True
+        hint_text: "Enter Destination location"
+        size: (150, 44)
+
+    TextInput:
+        id: depart_date
+        font_size:20
+        multiline:True
+        hint_text: "Enter Departure date in the form of YYYY-MM-DD"
+        size: (150, 44)
+
+    TextInput:
+        id: return_date
+        font_size:20
+        multiline:True
+        hint_text: "Enter Return date in the form of YYYY-MM-DD"
+        size: (150, 44)
+
+    CustButton:
+        id: b1
+        size_hint_y:0.1
+        text:"Check Minimum Price"
+        on_press:test.update(source.text,destination.text,depart_date.text,return_date.text)
+
+    Label:
+        id: resultsLabel
+        text:"Results will display here"
+        size_hint:(None, None)
+        pos_hint:{'center_x':0.5, 'y': 0.25}
+        size: (150, 44)
+        padding_x:[10,10]
+
+    CustButton:
+        size_hint_y:0.1
+        size_hint_x:0.5
+        text:"Clear"
+        on_press:test.clear()
