@@ -1,5 +1,6 @@
 # Datamining
-### Data Mining Project
+### Data Mining Project 
+### Resmy Vijaykumar - 17201972
 ### Assignment – Finding Cheapest Air Flights Between Two Locations
 #### Introduction:
 Frequent travelers are always looking for cheap flight prices between two destinations in order to make a decision to book air tickets. Most flight bookings nowadays happen online, and flight booking websites contain lot of data about flights. By webscraping the data, it is possible to find ways of mining the data for real-world applications. One of the real-world problems is to find the cheapest fare between two destinations. This project aims to deploy an app that will provide the cheapest flight ticket price between two destinations on specific dates. This will help flyers to save cost and effort by using our app to book the cheapest flight.
