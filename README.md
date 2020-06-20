@@ -1,9 +1,9 @@
 # Datamining
 ### Data Mining Project
 ### Assignment – Finding Cheapest Air Flights Between Two Locations
-Introduction:
+#### Introduction:
 Frequent travelers are always looking for cheap flight prices between two destinations in order to make a decision to book air tickets. Most flight bookings nowadays happen online, and flight booking websites contain lot of data about flights. By webscraping the data, it is possible to find ways of mining the data for real-world applications. One of the real-world problems is to find the cheapest fare between two destinations. This project aims to deploy an app that will provide the cheapest flight ticket price between two destinations on specific dates. This will help flyers to save cost and effort by using our app to book the cheapest flight.
-Project Overview:
+#### Project Overview:
 The project consisted of five milestones:
 1)	Acquisition of flight price data
 2)	Management of data by storing in datalake
@@ -13,13 +13,13 @@ The project consisted of five milestones:
 
 This project was done using Python 3.8 and Pycharm Community Edition. The websites used for scraping were Expedia and Google Flights. Selenium package was used to do webscraping. Microsoft Azure was used as a datalake. The project was deployed in an app using kivy package.
 
-Project Details:
+#### Project Details:
 1)	Acquisition of flight price data.
 First, we need to scrape the flight price data from a website containing flight prices. This can be done using Selenium in combination with Chrome webdriver.  The url passed for the webscraping was Expedia webpage.
 Selenium is a library for accessing websites and automation testing. Chrome driver is a software than can open a browser automatically.
 The url of Expedia was provided to the get function of browser which used Chromedriver to open a browser window with the Expedia URL. Within the Expedia webpage, the buttons for opening the flights page was located using Xpath. The inputs were fed into the text boxes for starting location, destination, travel date and return date. 
 The webpage with the flights and the flights data was scraped to obtain the prices. These prices were entered into a dataframe along with the flight details. Finally, the dataframe is written and stored onto an Excel sheet.
-Code:
+
 
 2)	Management of data in datalake.
 The data obtained through webscraping will be stored in a datalake on Microsoft Azure. First, an account is created on Microsoft Azure.In Microsoft Azure, an active directory is created.
