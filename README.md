@@ -10,15 +10,16 @@ The project consisted of five milestones:
 3)	Processing of data
 4)	Interpretation of data and Communication of Insights
 5)	Deployment in mobile app using Kivy
+
 This project was done using Python 3.8 and Pycharm Community Edition. The websites used for scraping were Expedia and Google Flights. Selenium package was used to do webscraping. Microsoft Azure was used as a datalake. The project was deployed in an app using kivy package.
-Project:
+
+Project Details:
 1)	Acquisition of flight price data.
 First, we need to scrape the flight price data from a website containing flight prices. This can be done using Selenium in combination with Chrome webdriver.  The url passed for the webscraping was Expedia webpage.
 Selenium is a library for accessing websites and automation testing. Chrome driver is a software than can open a browser automatically.
 The url of Expedia was provided to the get function of browser which used Chromedriver to open a browser window with the Expedia URL. Within the Expedia webpage, the buttons for opening the flights page was located using Xpath. The inputs were fed into the text boxes for starting location, destination, travel date and return date. 
 The webpage with the flights and the flights data was scraped to obtain the prices. These prices were entered into a dataframe along with the flight details. Finally, the dataframe is written and stored onto an Excel sheet.
 Code:
-
 
 2)	Management of data in datalake.
 The data obtained through webscraping will be stored in a datalake on Microsoft Azure. First, an account is created on Microsoft Azure.In Microsoft Azure, an active directory is created.
